@@ -13,14 +13,15 @@
   <body>
     {% include 'navbar.html' %}
 
-    <h1>View All</h1>
-<!--
-    <ul class="list-group">
-        {% for employee in employees %}
-            <li class="list-group-item"><a href="employee/.id">{{employee.name}}</a></li>
+    <h1>View All </h1>
+
+    <ul>
+        {% for data in data %}
+            {{ data }}
         {% endfor %}
     </ul>
--->
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

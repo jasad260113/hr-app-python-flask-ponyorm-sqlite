@@ -9,7 +9,15 @@ def main():
 
 @app.route('/all')
 def all():
-    return render_template('all.html')
+    # Open connection to database
+    connection = sqlite3.connect('hrapp.db')
+    cursor = connection.cursor()
+
+    cursor.execute('select * from employees')
+
+    data = cursor.fetchall()
+
+    return render_template('all.html', data=data)
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -20,10 +28,24 @@ def register():
     city = request.form['city']
     province = request.form['province']
     postcode = request.form['postcode']
-    #print 'The submitted employee name is: ' + firstname
+    gender = request.form['gender']
+    phone = request.form['phone']
+    # print 'firstname: ' + firstname
 
-    open_db_connection()
+    # Open connection to database
+    connection = sqlite3.connect('hrapp.db')
+    cursor = connection.cursor()
 
+    # Insert data into database
+    cursor.execute('INSERT INTO employees (firstname, lastname, address, address2, city, province, postcode, gender, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    (firstname, lastname, address, address2, city, province, postcode, gender, phone))
+
+    # Commit data into database
+    connection.commit()
+
+    # Close connection to database
+    cursor.close()
+    connection.close()
 
     return render_template('employee.html')
 
@@ -44,22 +66,6 @@ def add():
 def remove():
     return render_template('remove.html')
 
-def open_db_connection():
-    connection = sqlite3.connect('hrapp.db')
-    cursor = connection.cursor()
-
-def create_table():
-    cursor.execute('CREATE TABLE IF NOT EXISTS employees(firstname TEXT, lastname TEXT, address TEXT, address2 TEXT, city TEXT, province TEXT, postcode TEXT)')
-
-def input_data():
-    cursor.execute('INSERT INTO employees')
-
-def commit_changes():
-    connection.commit()
-
-def close_connection():
-    cursor.close()
-    connection.close()
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

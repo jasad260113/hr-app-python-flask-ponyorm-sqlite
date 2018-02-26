@@ -16,8 +16,9 @@ def all():
     cursor.execute('select * from employees')
 
     data = cursor.fetchall()
+    list = data
 
-    return render_template('all.html', data=data)
+    return render_template('all.html', list=list)
 
 @app.route('/register', methods=['POST'])
 def register():

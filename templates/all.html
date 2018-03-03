@@ -1,17 +1,41 @@
 {% extends "base.html" %}
-
 {% block title %}
-  View All
+    View All
 {% endblock %}
 
 {% block content %}
-  <h1>View All </h1>
+<h1>View All </h1>
 
+<!--
   <ul class="list-group">
-    {% for record in list: %}
+    {% for record in list %}
     <li class="list-group-item">
-        <a href="#"> {{ record[0], record[1], record[2] }} </a>
+        <a href="#"> {{ record[0], record[1], record[2], record[3] }} </a>
     </li>
     {% endfor %}
   </ul>
+  -->
+<div class="container">
+    <table class="table table-hover">
+        <thead class="bg-primary text-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for record in all_employees %}
+            <tr>
+                <th scope="row">{{ record.id }}</th>
+                <td><a href="employee/{{ record[0] }}">{{ record.firstname }}</a></td>
+                <td>{{ record.lastname }}</td>
+                <td>{{ record.address }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-  Add Employee
+  Update Employee
 {% endblock %}
 
 {% block content %}
@@ -48,14 +48,16 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="province">Province</label>
-                    <select class="form-control" name="province" id="province">
-                        <option value="" selected disabled hidden>Choose...</option>
-                        <option value="1">East Midlands</option>
-                        <option value="2">East of England</option>
-                        <option value="3">North East</option>
-                        <option value="4">North West</option>
-                        <option value="5">South East</option>
-                        <option value="6">South West</option>
+                    <select name="province" id="province" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Drenthe</option>
+                        <option>Flevoland</option>
+                        <option>Friesland</option>
+                        <option>Gelderland</option>
+                        <option>Groningen</option>
+                        <option>Limburg</option>
+                        <option>North Brabant</option>
+                        <option>North Holland</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">

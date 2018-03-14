@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block content %}
+<h1>Add Employee</h1>
     <div class="container">
-        <h1>Add Employee</h1>
         <p>Fill in the form below to add an employee.</p>
 
         <form method="post" action="{{ url_for('register') }}">
@@ -48,6 +48,16 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="province">Province</label>
+<<<<<<< HEAD
+                    <select name="province" id="province" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>East Midlands</option>
+                        <option>East of England</option>
+                        <option>North East</option>
+                        <option>North West</option>
+                        <option>South East</option>
+                        <option>South West</option>
+=======
                     <select class="form-control" name="province" id="province">
                         <option value="" selected disabled hidden>Choose...</option>
                         <option value="1">East Midlands</option>
@@ -56,6 +66,7 @@
                         <option value="4">North West</option>
                         <option value="5">South East</option>
                         <option value="6">South West</option>
+>>>>>>> master
                     </select>
                 </div>
                 <div class="form-group col-md-2">

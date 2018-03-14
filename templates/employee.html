@@ -7,10 +7,8 @@
 {% block content %}
 
 {% for record in list %}
-
+<h1>Update Employee</h1>
 <div class="container">
-  <h1>Update Employee</h1>
-
   <form method="post" action="{{ url_for('update') }}">
     <div class="form-group row">
       <label for="id" class="col-md-2 col-form-label">Employee ID:</label>
@@ -85,7 +83,11 @@
       </div>
     </div>
     <div class="form-group">
+<<<<<<< HEAD
+      <button type="submit" class="btn btn-success form-control">Update</button>
+=======
       <button type="submit" class="btn btn-primary form-control">Update</button>
+>>>>>>> master
     </div>
   </form>
 </div>

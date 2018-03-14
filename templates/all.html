@@ -19,6 +19,7 @@
     <table class="table table-hover">
         <thead class="bg-primary text-light">
             <tr>
+                <th scope="col"><input class="form-check-input" type="checkbox" id="main-checkbox" style="margin:0px;position:relative"></th>
                 <th scope="col">ID</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
@@ -29,13 +30,18 @@
 
             {% for record in all_employees %}
             <tr>
-                <th scope="row">{{ record.id }}</th>
-                <td><a href="employee/{{ record[0] }}">{{ record.firstname }}</a></td>
-                <td>{{ record.lastname }}</td>
+                <th><input class="form-check-input" type="checkbox" style="margin:0px" name="checkbox" value="{{ record.id }}"></th>
+                <td><a href="employee/{{ record.id }}" style="color: black">{{ record.id }}</a></td>
+                <td><a href="employee/{{ record.id }}">{{ record.firstname }}</a></td>
+                <td><a href="employee/{{ record.id }}">{{ record.lastname }}</a></td>
                 <td>{{ record.address }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    <button type="button" class="btn btn-danger" id="del-button">Delete</button>
+
 </div>
+
 {% endblock %}

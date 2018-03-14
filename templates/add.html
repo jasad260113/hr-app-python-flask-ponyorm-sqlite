@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block content %}
+<h1>Add Employee</h1>
     <div class="container">
-        <h1>Add Employee</h1>
         <p>Fill in the form below to add an employee.</p>
 
         <form method="post" action="{{ url_for('register') }}">
@@ -50,14 +50,12 @@
                     <label for="province">Province</label>
                     <select name="province" id="province" class="form-control">
                         <option selected>Choose...</option>
-                        <option>Drenthe</option>
-                        <option>Flevoland</option>
-                        <option>Friesland</option>
-                        <option>Gelderland</option>
-                        <option>Groningen</option>
-                        <option>Limburg</option>
-                        <option>North Brabant</option>
-                        <option>North Holland</option>
+                        <option>East Midlands</option>
+                        <option>East of England</option>
+                        <option>North East</option>
+                        <option>North West</option>
+                        <option>South East</option>
+                        <option>South West</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">

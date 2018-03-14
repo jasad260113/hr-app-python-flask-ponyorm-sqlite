@@ -35,6 +35,10 @@ def all():
     all_employees = select (e for e in Employees)[:]
     return render_template('all.html', all_employees=all_employees)
 
+@app.route('/add')
+def add():
+    return render_template('add.html')
+
 @app.route('/register', methods=['POST'])
 @db_session
 def register():
@@ -52,9 +56,25 @@ def register():
     commit()
     return render_template('submit.html')
 
-@app.route('/add')
-def add():
-    return render_template('add.html')
+@app.route('/update', methods=['POST'])
+@db_session
+def update():
+
+    # Get the employee object from the db
+    employee = Employees[request.form['id']]
+
+    employee.firstname = request.form['firstName']
+    employee.lastname = request.form['lastName']
+    employee.address = request.form['address']
+    employee.address2 = request.form['address2']
+    employee.city = request.form['city']
+    employee.province = request.form['province']
+    employee.postcode = request.form['postcode']
+    employee.gender = request.form['gender']
+    employee.phone = request.form['phone']
+    commit()
+
+    return render_template('submit.html')
 
 @app.route('/update', methods=['POST'])
 @db_session
@@ -99,3 +119,6 @@ def employee(id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# How to log to the console
+# logging.warning('The province is: ' + province)

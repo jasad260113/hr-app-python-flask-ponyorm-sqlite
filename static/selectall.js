@@ -24,17 +24,6 @@ function deselectAllBoxes() {
     }
 }
 
-document.getElementById('main-checkbox').addEventListener('change',
-    function() {
-        if(this.checked) {
-            selectAllBoxes();
-        }
-        else {
-            deselectAllBoxes();
-        }
-    }
-);
-
 var mainCheckbox = document.getElementById('main-checkbox');
 if (mainCheckbox) {
     mainCheckbox.addEventListener('click',

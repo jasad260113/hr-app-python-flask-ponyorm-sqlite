@@ -1,6 +1,5 @@
 console.log('The selectall.js file works');
 
-<<<<<<< HEAD
 function isEmpty(obj) {
     for(var key in obj) {
         if(obj.hasOwnProperty(key))
@@ -11,8 +10,20 @@ function isEmpty(obj) {
 
 function selectAllBoxes() {
     console.log('The selectAllBoxes function works');
+    checkboxes = document.getElementsByName('checkbox');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = true;
+    }
+}
+
+function deselectAllBoxes() {
+    console.log('The deselectAllBoxes function works');
     var checkboxes = document.getElementsByName('checkbox');
-=======
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+    }
+}
+
 document.getElementById('main-checkbox').addEventListener('change',
     function() {
         if(this.checked) {
@@ -23,28 +34,6 @@ document.getElementById('main-checkbox').addEventListener('change',
         }
     }
 );
-
-function selectAllBoxes() {
-    console.log('The selectAllBoxes function works');
-    checkboxes = document.getElementsByName('checkbox');
-
->>>>>>> master
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = true;
-    }
-}
-
-function deselectAllBoxes() {
-    console.log('The deselectAllBoxes function works');
-<<<<<<< HEAD
-    var checkboxes = document.getElementsByName('checkbox');
-=======
->>>>>>> master
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = false;
-    }
-}
-<<<<<<< HEAD
 
 var mainCheckbox = document.getElementById('main-checkbox');
 if (mainCheckbox) {
@@ -122,5 +111,3 @@ if (deleteButton) {
         }
     });
 }
-=======
->>>>>>> master

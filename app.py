@@ -76,24 +76,6 @@ def update():
 
     return render_template('submit.html')
 
-@app.route('/update', methods=['POST'])
-@db_session
-def update():
-    # Get the employee object from the db
-    employee = Employees[request.form['id']]
-    # Store values from form in employee object
-    employee.firstname = request.form['firstName']
-    employee.lastname = request.form['lastName']
-    employee.address = request.form['address']
-    employee.address2 = request.form['address2']
-    employee.city = request.form['city']
-    employee.province = request.form['province']
-    employee.postcode = request.form['postcode']
-    employee.gender = request.form['gender']
-    employee.phone = request.form['phone']
-    commit()
-    return render_template('submit.html')
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')

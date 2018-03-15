@@ -64,7 +64,6 @@
       <div class="form-group col-md-3">
         <label for="province">Province</label>
         <select name="province" id="province" class="form-control" value="{{ record.province }}">
-          <!-- <option selected disabled hidden>Choose...</option> -->
           <option value="1" {% if record.province == '1' %} selected {% endif %}>East Midlands</option>
           <option value="2" {% if record.province == '2' %} selected {% endif %}>East of England</option>
           <option value="3" {% if record.province == '3' %} selected {% endif %}>North East</option>
@@ -83,11 +82,7 @@
       </div>
     </div>
     <div class="form-group">
-<<<<<<< HEAD
       <button type="submit" class="btn btn-success form-control">Update</button>
-=======
-      <button type="submit" class="btn btn-primary form-control">Update</button>
->>>>>>> master
     </div>
   </form>
 </div>

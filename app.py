@@ -1,8 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask
+from flask import render_template
+from flask import request
 from pony.orm import *
-#from wtforms import Form, BooleanField, StringField, PasswordField, validators
+import json
+import logging
 import sqlite3
-import json, logging
+#from wtforms import Form, BooleanField, StringField, PasswordField, validators
+
 
 logging.getLogger().setLevel(logging.INFO)
 

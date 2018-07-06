@@ -4,9 +4,25 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Contact Us</h1>
-  <p>Tel: 785493798574</p>
-  <p>Email: help@hrapp.com</p>
+  <div class="contact">
+    <h1>Get in touch!</h1>
+  </div>
+  <div class="details">
+    <p>If you would like more information then contact us on the details below.</p>
+    <p>Our opening hours are between 9am - 6pm on weekdays.</p>
+    <li>Tel: 785493798574</li>
+    <li>Email: help@hrapp.com</li>
+    <li>Address: 43 Oxford Street, London, W3 8HA</li>
+  </div>
+
+
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      <a href="https://www.pureblack.de">webdesign: pureblack.de</a>
+    </div>
+    <style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+  </div>
 
 
 {% endblock %}
